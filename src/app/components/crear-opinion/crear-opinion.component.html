@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="titulo mb-3">{{ titulo | uppercase}}
+            <div *ngif="loading" class="spinner-border text-success float-end" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </h5>
+        <form [formGroup]="form" (ngSubmit)="guardarOpinion()">
+            <div class="input-group mb-3">
+                <span class="input-group-text">
+                    <i class="fas fa-pen-square fa-3x"
+                    [class.green-icon]="this.form.get('opinion')?.valid"
+                    [class.red-icon]="this.form.get('opinion')?.touched && this.form.get('opinion')?.invalid"></i></span>
+                <textarea class="form-control" formControlName="opinion" placeholder="Escriba aquí su opinión"></textarea>
+            </div>
+            <h6 class="seleccionar">Seleccione una opinión:</h6>
+            <div class="input-group mb-3">
+                <select formControlName="tipOpinion" class="form-select form-select-lg">
+                    <option value="Positiva">Positiva</option>
+                    <option value="Negativa">Negativa</option>
+                    <option value="Neutral">Neutral</option>
+                  </select>
+            </div>
+            <div class="d-grid gap-2 ">
+                <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">
+                    <i class="fas fa-server"></i>&nbsp;Insertar
+                </button>
+              </div>
+        </form>
+    </div>
+</div>

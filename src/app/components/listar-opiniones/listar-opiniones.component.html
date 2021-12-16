@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="titulo mb-3">Listar Opiniones</h5>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Opinión</th>                
+                    <th>Tipo</th>                
+                    <th>CRUD</th>               
+                  </tr>
+                
+                <tr *ngFor="let Opinion of listOpiniones">
+                    <td>{{Opinion.opinion}}</td>
+                    <td>{{Opinion.tipOpinion}}</td>
+                    <td>
+                        <i (click)="editarOpinion(Opinion)"class="fas fa-edit text-info"></i>
+                        <i (click)="eliminarOpinion(Opinion.id)" class="fas fa-trash text-danger"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "botopinion2": {
+      "hosting": {
+        "BotOpinionPag2": [
+          "botopinion2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "botopinion2"
+  }
+}
