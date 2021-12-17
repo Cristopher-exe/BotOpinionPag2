@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.tepic.tecnm.mx/images/Logo%20TecNM.png" width="100" height="42" class="d-inline-block align-top" alt="">
+      BotOpinion
+    </a>
+    <div ngbDropdown class= "d-inline-block" *ngIf="userLogged|async as user;">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdowntoggle>Menu</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="btn btn-info btn-block m2" ngbDropdownItem (click)="logout()">Salir</button>
+            <button class="btn btn-info btn-block m2" routerLink="/opiniones" routerLinkActive="active" >Entrar BotOpinion</button>
+        </div>
+    </div>
+    <a class="navbar-brand" href="#" *ngIf="userLogged|async as user">
+        <img *ngIf="user.photoURL" src="{{user.photoURL}}" width="30" height="30" class="d-inline-block align-top" alt="">
+        {{user.email}}
+      </a>
+  </nav>
