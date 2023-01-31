@@ -1,2 +1,7 @@
 # BotOpinionPag2
-Version 2 del proyecto con el CRUD Funcionando, falta LOGIN
+CRUD proyecto para guardar, editar y eliminar opiniones sobre diversor temas.
+
+###### Tecnologias
+- Angular
+- TypeScript 
+- Firebase
